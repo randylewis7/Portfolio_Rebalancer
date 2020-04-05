@@ -36,6 +36,9 @@ allocations["SWTSX"]=.65
 allocations["SWAGX"]=.05
 '''
 
+from math import ceil
+from math import trunc
+
 #get how much money is currently in each fund
 print("Enter how much money is currently in each fund...")
 existing_monies={}
@@ -58,9 +61,8 @@ total_money+=input_money
 delta_monies={}
 for key in existing_monies:
 	delta_monies[key]=total_money*allocations[key]-existing_monies[key]
+#TODO: add rounding so that it comes out in exact cent values that still total the right amount
+#can do by rounding one delta up to the nearest cent, and all other down to nearest cent
+#except that this becomes more complicated because delta values can be positive or negative
 print("amounts to invest, by fund: "),
 print(delta_monies)
-
-#TODO: some way to save previous funds/allocations so you don't have to type them in each time
-#TODO: notify to reallocate on certain dates
-#resolve rounding issues?
