@@ -1,4 +1,4 @@
-#'''
+'''
 #get existing funds and corresponding (desired) allocations from user input
 fund="placeholder"
 allocation=0.0
@@ -34,7 +34,7 @@ allocations={}
 allocations["SWISX"]=.3
 allocations["SWTSX"]=.65
 allocations["SWAGX"]=.05
-'''
+#'''
 
 from math import ceil
 from math import trunc
@@ -49,8 +49,8 @@ for key in allocations:
 	existing_monies[key]=money
 	total_money+=money
 	
-print("current money in each fund: ")
-print(existing_monies)
+#print("current money in each fund: ")
+#print(existing_monies)
 print("total money: "+str(total_money))
 
 #get investment amount
@@ -64,5 +64,9 @@ for key in existing_monies:
 #TODO: add rounding so that it comes out in exact cent values that still total the right amount
 #can do by rounding one delta up to the nearest cent, and all other down to nearest cent
 #except that this becomes more complicated because delta values can be positive or negative
-print("amounts to invest, by fund: "),
-print(delta_monies)
+print("")
+print("")
+print("---------------------------------------------")
+print("amounts to invest, by fund: ")
+for key, value in delta_monies.items():
+	print(key+": "+str(value))
