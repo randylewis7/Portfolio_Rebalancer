@@ -70,3 +70,6 @@ print("---------------------------------------------")
 print("amounts to invest, by fund: ")
 for key, value in delta_monies.items():
 	print(key+": "+str(value))
+	
+#pause at end of script so that it doesn't just close when run from the executable
+input()
